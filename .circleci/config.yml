@@ -40,7 +40,7 @@ jobs:
       - run:
           name: "echo an env var that is part of our project"
           command: |
-            echo $MY_ENV_VAR # this env var must be set within the project
+            echo $my_first_env_var # this env var must be set within the project
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
@@ -50,3 +50,4 @@ workflows:
       - print_hello
       - print_world:
           requires: [print_hello]
+      - print_myname
